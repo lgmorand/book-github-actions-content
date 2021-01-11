@@ -23,7 +23,7 @@ jobs:
       name: variable env avec redefinition au step level
       env:
         TOTO: valeur3
-  say_hello:
+  job2:
     runs-on: ubuntu-latest
     name: "Mon premier job"
     env:
