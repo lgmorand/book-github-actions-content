@@ -23,11 +23,9 @@ jobs:
       name: variable env avec redefinition au step level
       env:
         TOTO: valeur3
-  definition:
+  job2:
     runs-on: ubuntu-latest
     name: "Mon premier job"
-    env:
-      TOTO: valeur2
     - run: |
         echo "VARIABLE=vert" >> $GITHUB_ENV
         echo $VARIABLE
