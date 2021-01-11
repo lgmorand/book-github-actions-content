@@ -2,33 +2,22 @@ name: Workflow pouvant se déclencher manuellement
 on: workflow_dispatch
 
 env:
- TOTO: valeur1
- TITI: valeur1
+ MAVARIABLE: valeur1
+ MAVARIABLE2: valeur1
 jobs:
-  say_hello:
+  test_variables:
     runs-on: ubuntu-latest
-    name: "Mon premier job"
-    needs: job2
     env:
-      TOTO: valeur2
+      MAVARIABLE: valeur2
     steps:
-    - run: echo $TOTO
-      name: variable direct
-    - run: echo $TITI
-      name: variable direct titi
-    - run: echo ${{env.TOTO}}
-      name: variable env 
-    - run: echo ${{env.TITI}}
-      name: variable env titi
-    - run: echo ${{env.TOTO}}
+    - run: echo $MAVARIABLE         # affiche valeur2 car variable au niveaux du job
+    - run: echo ${{env.MAVARIABLE}} # affiche valeur2 car variable au niveaux du job
+    - run: echo ${{env.MAVARIABLE}} # affiche valeur3 car variable au niveaux du step
       name: variable env avec redefinition au step level
       env:
-        TOTO: valeur3
-    - run: |
-        echo "TOTO=yellow" >> $GITHUB_ENV
-        echo $TOTO
-    - run: echo ${{env.TOTO}}
-    - run: echo $VARIABLE
+        MAVARIABLE: valeur3
+    - run: echo $MAVARIABLE2        # affiche valeur1 car variable au niveaux du workflow
+      name: variable direct MAVARIABLE2
   job2:
     runs-on: ubuntu-latest
     env:
