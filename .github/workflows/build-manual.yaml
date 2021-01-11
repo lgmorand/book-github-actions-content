@@ -23,11 +23,21 @@ jobs:
       name: variable env avec redefinition au step level
       env:
         TOTO: valeur3
-  job2:
+  say_hello:
     runs-on: ubuntu-latest
     name: "Mon premier job"
-    - run: |
-        echo "VARIABLE=vert" >> $GITHUB_ENV
-        echo $VARIABLE
-    - run: echo ${{env.VARIABLE}}
-     
+    env:
+      TOTO: valeur2
+    steps:
+    - run: echo $TOTO
+      name: variable direct
+    - run: echo $TITI
+      name: variable direct titi
+    - run: echo ${{env.TOTO}}
+      name: variable env 
+    - run: echo ${{env.TITI}}
+      name: variable env titi
+    - run: echo ${{env.TOTO}}
+      name: variable env avec redefinition au step level
+      env:
+        TOTO: valeur3
