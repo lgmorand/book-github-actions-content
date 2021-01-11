@@ -23,8 +23,12 @@ jobs:
       name: variable env avec redefinition au step level
       env:
         TOTO: valeur3
+  definition:
+    runs-on: ubuntu-latest
+    env:
+      MA_VARIABLE: jaune
     - run: |
-        echo "TOTO=yellow" >> $GITHUB_ENV
-        echo $TOTO
-    - run: echo ${{env.TOTO}}
-       
+        echo "MA_VARIABLE=vert" >> $GITHUB_ENV
+        echo $MA_VARIABLE
+    - run: echo ${{env.MA_VARIABLE}}
+     
