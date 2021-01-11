@@ -5,14 +5,11 @@ env:
  TOTO: valeur1
  
 jobs:
-  env:
-    TOTO: valeur2
-    TITI: valeur1
   say_hello:
     runs-on: ubuntu-latest
     name: "Mon premier job"
     env:
-      TOTO: valeur3
+      TOTO: valeur2
     steps:
     - run: echo $TITI
     - run: echo $TOTO
@@ -22,7 +19,7 @@ jobs:
     - run: echo ${{env.TOTO}}
       name: second
       env:
-        TOTO: valeur4
+        TOTO: valeur3
     - run: echo $TOTO
       name: third
       env:
