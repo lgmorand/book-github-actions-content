@@ -26,9 +26,9 @@ jobs:
   definition:
     runs-on: ubuntu-latest
     env:
-      MA_VARIABLE: jaune
+      VARIABLE: jaune
     - run: |
-        echo "MA_VARIABLE=vert" >> $GITHUB_ENV
-        echo $MA_VARIABLE
-    - run: echo ${{env.MA_VARIABLE}}
+        echo "VARIABLE=vert" >> $GITHUB_ENV
+        echo $VARIABLE
+    - run: echo ${{env.VARIABLE}}
      
