@@ -25,8 +25,9 @@ jobs:
         TOTO: valeur3
   definition:
     runs-on: ubuntu-latest
+    name: "Mon premier job"
     env:
-      VARIABLE: jaune
+      TOTO: valeur2
     - run: |
         echo "VARIABLE=vert" >> $GITHUB_ENV
         echo $VARIABLE
