@@ -9,8 +9,6 @@ jobs:
       TOTO: hello
     steps:
     - run: echo "Hello je viens de démarrer"
-    - run: echo ${{TOTO}}
-      name: test
     - run: echo ${{env.TOTO}}
       name: premier 
     - run: echo ${{env.TOTO}}
