@@ -26,7 +26,5 @@ jobs:
     - run: |
         echo "TOTO=yellow" >> $GITHUB_ENV
         echo $TOTO
-    - run: |
-        echo "::set-env name=TOTO::red"
-        echo $TOTO
+    - run: echo ${{env.TOTO}}
        
