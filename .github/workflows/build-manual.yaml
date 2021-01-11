@@ -3,7 +3,7 @@ on: workflow_dispatch
 
 env:
  TOTO: valeur1
- 
+ TITI: valeur1
 jobs:
   say_hello:
     runs-on: ubuntu-latest
@@ -11,16 +11,15 @@ jobs:
     env:
       TOTO: valeur2
     steps:
+    - run: echo $TOTO
+      name: variable direct
     - run: echo $TITI
-    - run: echo $TOTO
-      name: test
+      name: variable direct titi
     - run: echo ${{env.TOTO}}
-      name: premier 
+      name: variable env 
+    - run: echo ${{env.TITI}}
+      name: variable env titi
     - run: echo ${{env.TOTO}}
-      name: second
+      name: variable env avec redefinition au step level
       env:
-        TOTO: valeur3
-    - run: echo $TOTO
-      name: third
-      env:
-        TOTO: yeah   
+        TOTO: valeur3  
