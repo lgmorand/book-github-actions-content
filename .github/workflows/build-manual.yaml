@@ -35,5 +35,6 @@ jobs:
     - run: echo $VARIABLE
     - run: |
         echo "VARIABLE=vert" >> $GITHUB_ENV
+        echo $VARIABLE
     - run: echo $VARIABLE
      
