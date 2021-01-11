@@ -1,6 +1,10 @@
 name: Workflow pouvant se déclencher manuellement
 on: workflow_dispatch
 
+env:
+ TOTO: titi
+ TATA: tata
+ 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
@@ -8,7 +12,7 @@ jobs:
     env:
       TOTO: hello
     steps:
-    - run: echo "Hello je viens de démarrer"
+    - run: echo $TITI
     - run: echo $TOTO
       name: test
     - run: echo ${{env.TOTO}}
