@@ -5,5 +5,9 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     name: "Mon premier job"
+    env:
+      TOTO: hello
     steps:
     - run: echo "Hello je viens de démarrer"
+    - run: echo {{TOTO}}
+    - run: echo {{env.TOTO}}
