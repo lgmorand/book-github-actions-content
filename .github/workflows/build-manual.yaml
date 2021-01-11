@@ -2,15 +2,17 @@ name: Workflow pouvant se déclencher manuellement
 on: workflow_dispatch
 
 env:
- TOTO: titi
- TATA: tata
+ TOTO: valeur1
  
 jobs:
+  env:
+    TOTO: valeur2
+    TITI: valeur1
   say_hello:
     runs-on: ubuntu-latest
     name: "Mon premier job"
     env:
-      TOTO: hello
+      TOTO: valeur3
     steps:
     - run: echo $TITI
     - run: echo $TOTO
@@ -20,7 +22,7 @@ jobs:
     - run: echo ${{env.TOTO}}
       name: second
       env:
-        TOTO: world
+        TOTO: valeur4
     - run: echo $TOTO
       name: third
       env:
