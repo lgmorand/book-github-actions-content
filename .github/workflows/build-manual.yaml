@@ -8,6 +8,7 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     name: "Mon premier job"
+    needs: job2
     env:
       TOTO: valeur2
     steps:
@@ -27,6 +28,7 @@ jobs:
         echo "TOTO=yellow" >> $GITHUB_ENV
         echo $TOTO
     - run: echo ${{env.TOTO}}
+    - run: echo $VARIABLE
   job2:
     runs-on: ubuntu-latest
     env:
@@ -35,6 +37,7 @@ jobs:
     - run: echo $VARIABLE
     - run: |
         echo "VARIABLE=vert" >> $GITHUB_ENV
+        echo "TOTO=vert" >> $GITHUB_ENV
         echo $VARIABLE
     - run: echo $VARIABLE
      
