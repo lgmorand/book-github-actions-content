@@ -30,6 +30,6 @@ jobs:
     steps:
     - run: echo $MA_VARIABLE
     - run: |
-      echo "NOM_VARIABLE=vert" >> $GITHUB_ENV
-      echo $MA_VARIABLE
+        echo "NOM_VARIABLE=vert" >> $GITHUB_ENV
+        echo $MA_VARIABLE
      - run: echo $MA_VARIABLE
