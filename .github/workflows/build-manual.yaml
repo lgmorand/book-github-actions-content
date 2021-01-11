@@ -29,6 +29,5 @@ jobs:
       VARIABLE: jaune
     steps:
     - run: echo $VARIABLE
-    - run: |
-        echo "VARIABLE=vert" >> $GITHUB_ENV
-     - run: echo $VARIABLE
+
+    - run: echo $VARIABLE
