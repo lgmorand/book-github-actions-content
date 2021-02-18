@@ -1,0 +1,15 @@
+name: "triggers - exercice 1"
+on:
+  schedule:
+  - cron: "30 19 * * 1-5"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/stale@v3
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stale-issue-message: 'Ce bug est ouvert depuis 30 jours sans activité. Il sera fermé dans 5 jours'
+        days-before-stale: 30
+        days-before-close: 5

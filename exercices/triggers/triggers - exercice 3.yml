@@ -1,0 +1,12 @@
+name: "triggers - exercice 3"
+on:
+  pull_request:
+    paths:                   # sur les fichiers/chemins
+        - '**.yml'           # qui ont l'extension 'yml'
+        - '!**/test/**.yml'  # sauf ceux qui ont un dossier parent nommé 'test'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "je vérifie les fichiers YAML"
