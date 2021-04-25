@@ -1,0 +1,16 @@
+name: variables - exercice 1
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  job1: 
+    runs-on: ubuntu-latest
+    env:
+      VAR1: "hello"
+    
+    steps:
+    - run: |
+        VAR2=$VAR1
+        echo $VAR2 >> $GITHUB_ENV 
+    - run: echo $VAR2
