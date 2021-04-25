@@ -10,7 +10,5 @@ jobs:
       VAR1: "hello"
     
     steps:
-    - run: |
-        VARTMP=$VAR1
-        echo "VAR2=$VARTMP" >> $GITHUB_ENV 
+    - run: echo "VAR2=$VAR1" >> $GITHUB_ENV 
     - run: echo $VAR2
