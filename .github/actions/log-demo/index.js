@@ -11,7 +11,8 @@ try {
   core.info('')
   core.info('')
   core.info('\u001b[38;5;6mI can play with colors')
-  core.info('\u001b[48;5;6mEven the background')
+  core.info('\u001b[48;2;255;0;0mEven the background')
+  core.info('\u001b[1mBold text')
   core.info('')
   core.info('')
   core.info('ℹ️ I can also embed icons if I want');
