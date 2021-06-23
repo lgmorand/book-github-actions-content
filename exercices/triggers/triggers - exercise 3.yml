@@ -1,0 +1,12 @@
+name: "triggers - exercise 3"
+on:
+  pull_request:
+    paths:                   
+        - '**.yml'           
+        - '!**/test/**.yml'  
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "checking YAML files"

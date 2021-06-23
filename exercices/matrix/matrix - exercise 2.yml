@@ -1,4 +1,4 @@
-name: "matrix - exercice 2"
+name: "matrix - exercise 2"
 
 on:
   workflow_dispatch:
@@ -19,4 +19,4 @@ jobs:
           - os: macos-latest
             node: 8
     steps:
-    - run: echo "Je m'execute sur ${{ matrix.os }} avec la version Node ${{ matrix.node }}"
+    - run: echo "Running on ${{ matrix.os }} with the node version ${{ matrix.node }}"

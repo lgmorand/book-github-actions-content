@@ -1,4 +1,4 @@
-name: jobs - exercice 2
+name: jobs - exercise 2
 
 on:
   workflow_dispatch:
@@ -18,10 +18,10 @@ jobs:
     needs: job1
     if: failure()
     steps:
-      - run: echo "quelque chose s'est mal passé"
+      - run: echo "something bad occured"
   job3:
     runs-on: ubuntu-latest
     needs: job2
     if: always()
     steps:
-      - run: echo "quelque chose s'est mal passé"
+      - run: echo "always executing"

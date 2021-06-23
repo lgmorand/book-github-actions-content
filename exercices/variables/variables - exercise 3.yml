@@ -1,0 +1,15 @@
+name: variables - exercice 3
+
+on:
+  workflow_dispatch:
+
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+    - name: NAME OF THE WORKFLOW
+      run: echo ${{ github.workflow }} 
+    - name: The link to the profile of the owner
+      run: echo ${{ github.event.repository.owner.html_url }} 
+    - if: ${{ github.event.repository.private == 'false' }}
+      run:  echo "::warning::This repository is public!"

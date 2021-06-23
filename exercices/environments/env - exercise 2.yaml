@@ -1,0 +1,13 @@
+name: environments - exercise 2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    name: Deploy
+    runs-on: ubuntu-latest
+    concurrency: AnyName # Unique name to define our concurrency group
+    steps:
+      - run: echo DEV
+      # any task to deploy an app

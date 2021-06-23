@@ -1,4 +1,4 @@
-name: "matrix - exercice 1"
+name: "matrix - exercise 1"
 
 on:
   workflow_dispatch:

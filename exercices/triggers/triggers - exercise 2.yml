@@ -1,0 +1,11 @@
+name: "triggers - exercise 2"
+on:
+  push:
+  pull-request:
+  - branch: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Check code"

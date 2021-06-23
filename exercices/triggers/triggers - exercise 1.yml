@@ -1,4 +1,4 @@
-name: "triggers - exercice 1"
+name: "triggers - exercise 1"
 on:
   schedule:
   - cron: "30 19 * * 1-5"
@@ -10,6 +10,6 @@ jobs:
     - uses: actions/stale@v3
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        stale-issue-message: 'Ce bug est ouvert depuis 30 jours sans activité. Il sera fermé dans 5 jours'
+        stale-issue-message: 'This bug is open for 30 days with any activity. It will be closed in 5 days'
         days-before-stale: 30
         days-before-close: 5

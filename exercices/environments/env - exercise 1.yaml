@@ -1,0 +1,33 @@
+name: environments - exercise 1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    name: Dev
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo DEV
+  job2:
+    name: Testing
+    needs: job1
+    runs-on: ubuntu-latest
+    environment:
+      name: TESTING
+    steps:
+      - run: echo test
+  job3:
+    name: Loading Testing
+    needs: job1
+    runs-on: ubuntu-latest
+    environment:
+      name: LOADTESTING
+    steps:
+      - run: echo "load testing"
+  job4:
+    name: Prod
+    needs: [job2, job3]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Prod"

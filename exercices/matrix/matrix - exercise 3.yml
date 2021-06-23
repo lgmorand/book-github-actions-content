@@ -1,0 +1,15 @@
+name: "matrix - exercise 3"
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix:
+        server: [prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8]
+    steps:
+      - name: Deploy application
+        run: echo "Deploy on ${{ matrix.server}}"

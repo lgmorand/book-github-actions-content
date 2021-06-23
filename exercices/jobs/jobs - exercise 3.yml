@@ -1,4 +1,4 @@
-name: jobs - exercice 3
+name: jobs - exercise 3
 on:
   workflow_dispatch:
 
