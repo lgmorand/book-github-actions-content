@@ -1,0 +1,16 @@
+name: "trigger ex 1"
+on: 
+  schedule:
+  - cron: "30 19 * * 1-5"
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+    - name: TEST
+      run: echo HELLO !
+    - uses: actions/stale@v3
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stake-issue-message: "Ouvert depuis 30 jours. Il sera fermé..."
+        days-before-stale: 30
+        days-before-close: 5     
