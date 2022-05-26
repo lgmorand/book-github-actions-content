@@ -5,4 +5,9 @@ jobs:
     name: TEST
     runs-on: ubuntu-latest
     steps:
-      - run: echo COUCOU
+    - uses: actions/stale@v3
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stale-issue-message: 'This bug is open for 30 days with any activity. It will be closed in 5 days'
+        days-before-stale: 30
+        days-before-close: 5
