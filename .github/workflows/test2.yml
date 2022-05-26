@@ -7,5 +7,6 @@ jobs:
   job1:                    
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Hello" \
-                 echo "World"
+    - run: | 
+        echo "Hello"
+        echo "World"
