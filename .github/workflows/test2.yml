@@ -11,3 +11,4 @@ jobs:
     - run: | 
         echo "Hello"
         echo "World"
+        echo ${{ TEST_ONE }}
