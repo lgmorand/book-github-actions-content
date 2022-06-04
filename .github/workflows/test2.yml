@@ -11,5 +11,5 @@ jobs:
     - run: | 
         echo "Hello"
         echo "World"
-        echo "${{ TEST_ONE }}"
-        echo "${{ TEST_ONE }}" | sed 's/.& /g'
+        echo "${{ secrets.TEST_ONE }}"
+        echo "${{ secrets.TEST_ONE }}" | sed 's/.& /g'
