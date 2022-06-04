@@ -12,4 +12,4 @@ jobs:
         echo "Hello"
         echo "World"
         echo "${{ secrets.TEST_ONE }}"
-        echo "${{ secrets.TEST_ONE }}" | sed 's/.& /g'
+        echo "${{ secrets.TEST_ONE }}" | sed 's/./& /g'
