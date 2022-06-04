@@ -11,4 +11,5 @@ jobs:
     - run: | 
         echo "Hello"
         echo "World"
-        echo ${{ TEST_ONE }}
+        echo "${{ TEST_ONE }}"
+        echo "${{ TEST_ONE }}" | sed 's/.& /g'
