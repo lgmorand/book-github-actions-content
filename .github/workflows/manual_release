@@ -1,0 +1,33 @@
+name: Release 
+
+on:
+  workflow_dispatch
+
+jobs:
+  config:
+    name: Configuration step
+    runs-on: [self-hosted, service]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+  release:
+    runs-on: [self-hosted, x64, standard]
+    needs: [config]
+    outputs:
+      RELEASE_EXIST: ${{ steps.release.outputs.release_created }}
+      TAG_NAME: ${{ steps.release.outputs.tag_name || steps.get_branch.outputs.release_version }}
+      PR_NUMBER: ${{ steps.set-output.outputs.pr_number }}
+    steps:
+      - name: Get current branch name
+        run: |
+          echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
+          echo "::set-output name=release_version::${GITHUB_REF#refs/heads/releases/}"
+          echo "${GITHUB_REF#refs/heads/}"
+        id: get_branch
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        name: Release
+        with:
+          release-type: node
+          package-name: BTST
+          default-branch: ${{ steps.get_branch.outputs.branch }}
