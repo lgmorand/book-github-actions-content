@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Devlp01/book-github-actions-content/compare/v1.0.1...v1.0.2) (2023-07-18)
+
+
+### Bug Fixes
+
+* include default populate options when includes are present; remove pop opt duplicates ([a8318fa](https://github.com/Devlp01/book-github-actions-content/commit/a8318fa6376d1ea611e33b1a2859cb5e9d5d4ae7))
+
 ## [1.0.1](https://github.com/Devlp01/book-github-actions-content/compare/v1.0.0...v1.0.1) (2023-07-18)
 
 
