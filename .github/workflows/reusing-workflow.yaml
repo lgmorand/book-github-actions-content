@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  call-workflow-1-in-local-repo:
+  call-workflow-local-repo:
     uses: ./.github/workflows/reusable.yaml
     with:
       message: 'hello my friend'
