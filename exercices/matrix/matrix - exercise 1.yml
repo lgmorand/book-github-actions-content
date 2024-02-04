@@ -12,9 +12,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Recupere le code source
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ matrix.dotnet }}
       - name: Restore dependencies

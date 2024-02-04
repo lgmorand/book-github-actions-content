@@ -1,4 +1,4 @@
-name: Workflow se déclenchant chaque jour à minuit
+name: Workflow triggered every day at midnight
 on:
   schedule:
   - cron: "0 0 * * *" 
@@ -7,4 +7,4 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Hello il est minuit"
+    - run: echo "Hello it's midnight"

@@ -1,8 +1,8 @@
-name: Workflow pouvant se déclencher manuellement
+name: Workflow triggered manually
 on: workflow_dispatch
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Hello je viens de démarrer"
+    - run: echo "Hello I just started"

@@ -1,4 +1,4 @@
-<center><a href="https://www.amazon.fr/GitHub-Actions-pratique-Louis-Guillaume-MORAND/dp/2957832909" target="_blank"><img src="https://raw.githubusercontent.com/lgmorand/lgmorand/master/cover.jpg" height="200" /> </a></center>
+<center><a href="https://www.amazon.fr/GitHub-Actions-pratique-Louis-Guillaume-MORAND/dp/2957832909" target="_blank"><img src="https://github.com/lgmorand/lgmorand/raw/master/images/books/github-actions-en.jpg" height="200" /> </a></center>
 
 # GitHub Actions : A pratical guide
 
