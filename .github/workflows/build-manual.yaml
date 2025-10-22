@@ -11,11 +11,15 @@ jobs:
       MAVARIABLE: valeur2
     steps:
     - run: echo $MAVARIABLE         # affiche valeur2 car variable au niveaux du job
+    
     - run: echo ${{env.MAVARIABLE}} # affiche valeur2 car variable au niveaux du job
+
     - run: echo ${{env.MAVARIABLE}} # affiche valeur3 car variable au niveaux du step
+
       name: variable env avec redefinition au step level
       env:
         MAVARIABLE: valeur3
+
     - run: echo $MAVARIABLE2        # affiche valeur1 car variable au niveaux du workflow
       name: variable direct MAVARIABLE2
   job2:
@@ -24,9 +28,11 @@ jobs:
       VARIABLE: jaune
     steps:
     - run: echo $VARIABLE
+
     - run: |
         echo "VARIABLE=vert" >> $GITHUB_ENV
         echo "TOTO=vert" >> $GITHUB_ENV
         echo $VARIABLE
+
     - run: echo $VARIABLE
      
