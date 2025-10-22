@@ -2,5 +2,5 @@ name: 'Demo Action to show logging'
 description: 'log log log'
 author: 'Louis-Guillaume MORAND'
 runs:
-  using: 'node20' 
+  using: 'node24' 
   main: 'index.js' 

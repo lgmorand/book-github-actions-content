@@ -2,31 +2,36 @@ name: Workflow pouvant se déclencher manuellement
 on: workflow_dispatch
 
 env:
- MAVARIABLE: valeur1
- MAVARIABLE2: valeur1
+ MYVARIABLE: value1
+ MYVARIABLE2: value1
 jobs:
   test_variables:
     runs-on: ubuntu-latest
     env:
-      MAVARIABLE: valeur2
+      MYVARIABLE: value2
     steps:
-    - run: echo $MAVARIABLE         # affiche valeur2 car variable au niveaux du job
-    - run: echo ${{env.MAVARIABLE}} # affiche valeur2 car variable au niveaux du job
-    - run: echo ${{env.MAVARIABLE}} # affiche valeur3 car variable au niveaux du step
-      name: variable env avec redefinition au step level
+    - run: echo $MYVARIABLE         # value2 appears because variable at the job level
+
+    - run: echo ${{env.MYVARIABLE}} # value2 appears because variable at the job level
+
+    - name: variable env we redefinition at step level
       env:
-        MAVARIABLE: valeur3
-    - run: echo $MAVARIABLE2        # affiche valeur1 car variable au niveaux du workflow
-      name: variable direct MAVARIABLE2
+        MYVARIABLE: value3
+      run: echo ${{env.MYVARIABLE}} # value3 appears because variable at step level
+
+    - name: variable direct MYVARIABLE2
+      run: echo $MYVARIABLE2        # value1 displays because variable at the workflow level
   job2:
     runs-on: ubuntu-latest
     env:
-      VARIABLE: jaune
+      VARIABLE: yellow
     steps:
     - run: echo $VARIABLE
+
     - run: |
         echo "VARIABLE=vert" >> $GITHUB_ENV
         echo "TOTO=vert" >> $GITHUB_ENV
         echo $VARIABLE
+
     - run: echo $VARIABLE
      
